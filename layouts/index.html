@@ -90,15 +90,13 @@
 <body class="text-gray-800 antialiased selection:bg-brand-400 selection:text-white">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-[#faf8f5]/80 backdrop-blur-xl border-b border-wood-100" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-[#faf8f5]/90 backdrop-blur-xl border-b border-wood-100" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 bg-wood-600 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform shadow-md">
-                        <i class="ph-fill ph-tree-evergreen text-2xl text-brand-300"></i>
-                    </div>
-                    <span class="font-display font-bold text-2xl text-wood-800 tracking-tight">Chill Coffee</span>
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <img src="https://i.postimg.cc/Pf1MD94Z/Layer-1.png" alt="" class="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105">
+                    <span class="font-display font-bold text-2xl text-wood-800 tracking-tight hidden sm:block">Chill Coffee</span>
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -146,7 +144,7 @@
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-wood-400 opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-3 w-3 bg-wood-500"></span>
                         </span>
-                        Trạm dừng chân an yên giữa lòng phố
+                        Uống là mê về không nỡ
                     </div>
                     <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-wood-900 mb-6 leading-[1.1]">
                         Góc Nhỏ <br/> 
@@ -368,12 +366,12 @@
                 </h2>
             </div>
 
-            <!-- Bento Box Menu Layout with Mobile Horizontal Scroll -->
-            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar -mx-4 px-4 pb-8 lg:mx-0 lg:px-0 lg:pb-0 lg:grid lg:grid-cols-3 gap-6">
+            <!-- Bento Box Menu Layout - Đổi thành cuộn dọc (Grid) trên Mobile để dễ nhìn hơn -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <!-- CỘT 1 -->
-                <div class="min-w-[85%] snap-center lg:min-w-0 space-y-6">
+                <div class="space-y-6">
                     <!-- Cà phê nguyên chất -->
-                    <div class="bg-wood-600 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300 h-full lg:h-auto">
+                    <div class="bg-wood-600 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex items-center gap-3 mb-6 bg-white/20 w-fit px-4 py-2 rounded-2xl">
                             <span class="text-2xl">☕</span>
                             <h3 class="text-2xl font-display font-bold text-white">Cà Phê Nguyên Chất</h3>
@@ -444,7 +442,7 @@
                 </div>
 
                 <!-- CỘT 2 (Giữa) -->
-                <div class="min-w-[85%] snap-center lg:min-w-0 space-y-6">
+                <div class="space-y-6">
                     <!-- Image Banner -->
                     <div class="relative h-48 rounded-[2rem] overflow-hidden group">
                         <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="">
@@ -454,7 +452,7 @@
                     </div>
 
                     <!-- Nước ép & Sữa chua -->
-                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow h-full lg:h-auto">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow">
                         <div class="flex items-center gap-3 mb-6 bg-brand-50 w-fit px-4 py-2 rounded-2xl text-brand-600">
                             <span class="text-2xl">🥑</span>
                             <h3 class="text-2xl font-display font-bold">Nước Ép & Sữa Chua</h3>
@@ -500,7 +498,7 @@
                 </div>
 
                 <!-- CỘT 3 -->
-                <div class="min-w-[85%] snap-center lg:min-w-0 space-y-6">
+                <div class="space-y-6">
                     <!-- Trà đậm vị & Matcha -->
                     <div class="bg-wood-100/50 p-6 rounded-[2rem] border border-wood-200 hover:shadow-md transition-shadow">
                         <!-- Trà -->
@@ -590,7 +588,7 @@
     <section class="py-20 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-wood-500 font-bold uppercase tracking-wider text-sm mb-2 block">Instagram @chillcoffee.hcm</span>
+                <span class="text-wood-500 font-bold uppercase tracking-wider text-sm mb-2 block">Instagram @chill.coffee.py</span>
                 <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900">Góc Sống Ảo Cực Chill 📸</h2>
             </div>
             
@@ -640,7 +638,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-display font-bold text-gray-800 mb-1">Toạ độ bắt sóng</h4>
-                                <p class="text-gray-600 mb-2">123 Đường Cây Xanh, Phường Thư Giãn, Quận 1, TP. HCM</p>
+                                <p class="text-gray-600 mb-2">Phú Hội, Tuy An Đông, Đắk Lắk (Phú Yên)</p>
                                 <a href="https://maps.app.goo.gl/eJy5SPL2DRrspBbi8" target="_blank" class="inline-flex items-center gap-1 text-brand-600 font-bold hover:text-brand-800 transition-colors">
                                     Mở trong Google Maps <i class="ph-bold ph-arrow-square-out"></i>
                                 </a>
@@ -656,30 +654,17 @@
                                 <p class="text-gray-600">07:00 Sáng - 23:00 Đêm (Thứ 2 - Chủ Nhật)</p>
                             </div>
                         </div>
-
-                        <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-[#faf8f5] transition-colors">
-                            <div class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 text-orange-600 text-2xl">
-                                📞
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-display font-bold text-gray-800 mb-1">Hotline xỏ giày</h4>
-                                <p class="text-gray-600">099 999 9999 (Gọi đặt chỗ kẻo hết bàn đẹp nha)</p>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Connect -->
                     <div class="mt-10">
                         <p class="font-display font-bold text-gray-800 mb-4">Theo dõi Chill Coffee:</p>
                         <div class="flex gap-4">
-                            <a href="#" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-blue-500 hover:text-white hover:-translate-y-1 transition-all shadow-sm">
+                            <a href="https://www.facebook.com/chill.coffee.py" target="_blank" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:-translate-y-1 transition-all shadow-sm">
                                 <i class="ph-fill ph-facebook-logo text-2xl"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-pink-500 hover:text-white hover:-translate-y-1 transition-all shadow-sm">
+                            <a href="https://instagram.com/chill.coffee.py" target="_blank" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-pink-600 hover:text-white hover:-translate-y-1 transition-all shadow-sm">
                                 <i class="ph-fill ph-instagram-logo text-2xl"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-black hover:text-white hover:-translate-y-1 transition-all shadow-sm">
-                                <i class="ph-fill ph-tiktok-logo text-2xl"></i>
                             </a>
                         </div>
                     </div>
@@ -688,7 +673,7 @@
                 <!-- Map Placeholder -->
                 <div class="lg:w-1/2 relative h-[400px] lg:h-auto min-h-[400px] rounded-[2rem] overflow-hidden bg-gray-200 shadow-inner border-4 border-white group">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197216!2d106.69837967460337!3d10.778789359218413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f489f076127%3A0xa1936e7898583483!2sNh%C3%A0%20Th%E1%BB%9D%20%C4%90%E1%BB%A9c%20B%C3%A0%20S%C3%A0i%20G%C3%B2n!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+                        src="https://maps.google.com/maps?q=Phú%20Hội,%20Tuy%20An%20Đông,%20Đắk%20Lắk,%20Phú%20Yên&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                         width="100%" 
                         height="100%" 
                         style="border:0;" 
@@ -711,9 +696,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-10 text-center md:text-left">
                 <div>
-                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
-                        <i class="ph-fill ph-tree-evergreen text-3xl text-brand-400"></i>
-                        <span class="font-display font-bold text-3xl tracking-tight text-white">Chill Coffee</span>
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4 md:mb-2 bg-white/10 p-2 rounded-2xl w-fit mx-auto md:mx-0">
+                        <img src="https://i.postimg.cc/Pf1MD94Z/Layer-1.png" alt="" class="h-10 w-auto object-contain">
+                        <span class="font-display font-bold text-2xl tracking-tight text-white pr-2">Chill Coffee</span>
                     </div>
                     <p class="text-wood-300 font-medium">Bỏ hết âu lo, làm một ly to.</p>
                 </div>
