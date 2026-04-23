@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Coffee | Không gian mộc mạc, cực chill 🌿🪵</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f2fbf5',
+                            100: '#e0f6e8',
+                            200: '#c2ebd2',
+                            300: '#92dbb3',
+                            400: '#5ac28e',
+                            500: '#34a870', // Green tự nhiên
+                            600: '#258757',
+                            700: '#206b47',
+                            800: '#1b553a',
+                            900: '#174631',
+                        },
+                        wood: {
+                            50: '#fdf8f5',
+                            100: '#f8ebe4',
+                            200: '#eed4c8',
+                            300: '#e1b5a0',
+                            400: '#d08f71',
+                            500: '#c2714c', // Màu gỗ trầm ấm
+                            600: '#b45a38',
+                            700: '#96462d',
+                            800: '#793927',
+                            900: '#623122',
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'blob': 'blob 7s infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        blob: {
+                            '0%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                            '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+                            '100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Import font Fredoka & Nunito */
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        
+        body { font-family: 'Nunito', sans-serif; background-color: #faf8f5; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Fredoka', sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        /* Custom vui nhộn cho scrollbar - Tone Gỗ & Xanh */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #fdf8f5; }
+        ::-webkit-scrollbar-thumb { background: #c2714c; border-radius: 10px; border: 2px solid #fdf8f5; }
+        ::-webkit-scrollbar-thumb:hover { background: #96462d; }
+
+        /* Card hover effect nảy nhẹ */
+        .hover-bounce:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(194, 113, 76, 0.15); }
+        
+        /* Custom image blob */
+        .blob-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            transition: all 0.5s ease-in-out;
+        }
+        .blob-shape:hover {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+    </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="text-gray-800 antialiased selection:bg-brand-400 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-[#faf8f5]/80 backdrop-blur-xl border-b border-wood-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-wood-600 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform shadow-md">
+                        <i class="ph-fill ph-tree-evergreen text-2xl text-brand-300"></i>
+                    </div>
+                    <span class="font-display font-bold text-2xl text-wood-800 tracking-tight">Chill Coffee</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#vibe" class="font-display text-gray-600 hover:text-wood-600 font-medium transition-colors text-lg">Không Gian</a>
+                    <a href="#best-seller" class="font-display text-gray-600 hover:text-wood-600 font-medium transition-colors text-lg">Món Đỉnh</a>
+                    <a href="#menu" class="font-display text-gray-600 hover:text-wood-600 font-medium transition-colors text-lg">Thực Đơn</a>
+                    <a href="#location" class="bg-wood-600 hover:bg-wood-700 text-white px-6 py-2.5 rounded-full font-display font-medium transition-all shadow-lg shadow-wood-500/30 hover:-translate-y-1">
+                        👉 Ghé Chill
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-wood-600 hover:text-wood-800 focus:outline-none p-2 bg-wood-50 rounded-full">
+                        <i class="ph-bold ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#faf8f5] border-t border-wood-100 shadow-2xl absolute w-full rounded-b-3xl pb-4">
+            <div class="px-4 pt-4 pb-6 space-y-2 flex flex-col items-center">
+                <a href="#vibe" class="block px-4 py-3 bg-wood-50 text-wood-700 rounded-2xl font-display font-medium w-full text-center">✨ Không Gian</a>
+                <a href="#best-seller" class="block px-4 py-3 bg-brand-50 text-brand-700 rounded-2xl font-display font-medium w-full text-center">🔥 Món Đỉnh</a>
+                <a href="#menu" class="block px-4 py-3 bg-orange-50 text-orange-700 rounded-2xl font-display font-medium w-full text-center">🍹 Thực Đơn</a>
+                <a href="#location" class="block px-4 py-3 bg-wood-600 text-white rounded-2xl font-display font-medium w-full text-center mt-4 shadow-md">📍 Ghé Chill Thôi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden bg-[#faf8f5]">
+        <!-- Đồ họa trang trí (Tone màu Mộc mạc) -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-wood-200 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
+        <div class="absolute top-40 right-10 w-32 h-32 bg-brand-200 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-1/2 w-48 h-48 bg-orange-100 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob animation-delay-4000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-wood-600 font-display font-semibold text-sm mb-6 shadow-sm border border-wood-100">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-wood-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-wood-500"></span>
+                        </span>
+                        Trạm dừng chân an yên giữa lòng phố
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-wood-900 mb-6 leading-[1.1]">
+                        Góc Nhỏ <br/> 
+                        <span class="text-brand-500 relative">
+                            Mộc Mạc 🌿
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-200" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="transparent"/></svg>
+                        </span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                        Thả mình vào không gian <b>rộng rãi, thoáng đãng</b>, hít hà mùi hương của gỗ ấm áp và nạp năng lượng dưới những tán cây xanh mát. Chạy trốn deadline chưa bao giờ "chill" đến thế! 🪵✨
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#best-seller" class="bg-wood-600 hover:bg-wood-700 text-white px-8 py-4 rounded-full font-display font-semibold text-lg transition-all shadow-xl shadow-wood-600/30 flex items-center justify-center gap-2 hover:-translate-y-1">
+                            <i class="ph-bold ph-coffee"></i> Order Nước Thôi
+                        </a>
+                        <a href="#location" class="bg-white border-2 border-wood-200 hover:border-wood-500 text-wood-700 px-8 py-4 rounded-full font-display font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-lg">
+                            📍 Xem Bản Đồ
+                        </a>
+                    </div>
+                    
+                    <!-- Users/Reviews snippet -->
+                    <div class="mt-10 flex items-center justify-center lg:justify-start gap-4">
+                        <div class="flex -space-x-4">
+                            <img class="w-12 h-12 rounded-full border-4 border-[#faf8f5] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img class="w-12 h-12 rounded-full border-4 border-[#faf8f5] object-cover" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img class="w-12 h-12 rounded-full border-4 border-[#faf8f5] object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="">
+                            <div class="w-12 h-12 rounded-full border-4 border-[#faf8f5] bg-wood-100 flex items-center justify-center text-wood-700 font-bold font-display text-sm">
+                                99+
+                            </div>
+                        </div>
+                        <div class="text-sm">
+                            <p class="font-bold text-gray-800">"Quán siêu rộng, siêu thoáng 😍"</p>
+                            <p class="text-gray-500">Feedback chân thực nhất</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="order-1 lg:order-2 relative">
+                    <div class="absolute inset-0 bg-wood-200 blob-shape transform rotate-6 scale-105 opacity-50"></div>
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop" 
+                         alt="" 
+                         class="relative blob-shape shadow-2xl object-cover h-[400px] md:h-[500px] w-full animate-blob animation-delay-2000"
+                         onerror="this.src='https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=1000&auto=format&fit=crop'">
+                         
+                    <!-- Floating Badge -->
+                    <div class="absolute -right-4 top-10 bg-white p-4 rounded-3xl shadow-xl transform rotate-6 animate-bounce-slow flex items-center gap-3">
+                        <div class="text-3xl">🪑</div>
+                        <div>
+                            <p class="font-display font-bold text-gray-800 text-sm">Góc Yêu Thích</p>
+                            <p class="text-xs text-gray-500">Sofa siêu êm</p>
+                        </div>
+                    </div>
+                    <!-- Floating Badge 2 -->
+                    <div class="absolute -left-8 bottom-20 bg-brand-50 p-4 border border-brand-100 rounded-[2rem] shadow-xl transform -rotate-12 animate-bounce-slow animation-delay-2000">
+                        <span class="font-display font-bold text-brand-700 text-lg">Mát Mẻ Tự Nhiên 🍃</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="bg-wood-700 py-3 overflow-hidden whitespace-nowrap transform -rotate-1 relative z-20 shadow-lg">
+        <div class="inline-block animate-marquee whitespace-nowrap">
+            <span class="text-white font-display font-bold text-xl mx-4">🍃 KHÔNG GIAN XANH MÁT MẼ</span>
+            <span class="text-wood-300 mx-4">✦</span>
+            <span class="text-white font-display font-bold text-xl mx-4">🪵 HƯƠNG GỖ MỘC MẠC ẤM ÁP</span>
+            <span class="text-wood-300 mx-4">✦</span>
+            <span class="text-white font-display font-bold text-xl mx-4">🛋️ RỘNG RÃI THOẢI MÁI TỤ TẬP</span>
+            <span class="text-wood-300 mx-4">✦</span>
+            <span class="text-white font-display font-bold text-xl mx-4">📸 ÁNH SÁNG TỰ NHIÊN CỰC ĐẸP</span>
+            <span class="text-wood-300 mx-4">✦</span>
+            <!-- Duplicate for infinite effect -->
+            <span class="text-white font-display font-bold text-xl mx-4">🍃 KHÔNG GIAN XANH MÁT MẼ</span>
+            <span class="text-wood-300 mx-4">✦</span>
+            <span class="text-white font-display font-bold text-xl mx-4">🪵 HƯƠNG GỖ MỘC MẠC ẤM ÁP</span>
+            <span class="text-wood-300 mx-4">✦</span>
+            <span class="text-white font-display font-bold text-xl mx-4">🛋️ RỘNG RÃI THOẢI MÁI TỤ TẬP</span>
+        </div>
+    </div>
+
+    <!-- Vibe / Features Section -->
+    <section id="vibe" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">Điều Gì Tạo Nên <span class="text-wood-600">Chill Coffee?</span> 🤔</h2>
+                <p class="text-gray-600 text-lg">Không chen chúc, không ồn ào. Nơi đây là sự kết hợp hoàn hảo giữa thiên nhiên và sự tiện nghi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-50 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-brand-200 hover-bounce transition-all duration-300">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm transform -rotate-6 text-brand-500">
+                        <i class="ph-fill ph-plant"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-gray-900 mb-3">Ngập Tràn Cây Xanh</h3>
+                    <p class="text-gray-600">Từng góc nhỏ đều được điểm xuyết bởi màu xanh mướt của cây lá, giúp làm dịu đôi mắt mệt mỏi sau nhiều giờ dán mắt vào màn hình.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-wood-50 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-wood-200 hover-bounce transition-all duration-300 transform md:-translate-y-4">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm transform rotate-3 text-wood-600">
+                        <i class="ph-fill ph-house-line"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-gray-900 mb-3">Chất Gỗ Mộc Mạc</h3>
+                    <p class="text-gray-600">Bàn ghế, quầy bar và vách ngăn đều sử dụng chất liệu gỗ thật. Màu nâu ấm áp mang lại cảm giác thân thuộc, bình yên như ở nhà.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-orange-50/70 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-orange-200 hover-bounce transition-all duration-300">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm transform rotate-6 text-orange-600">
+                        <i class="ph-fill ph-armchair"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-gray-900 mb-3">Rộng Rãi & Thoải Mái</h3>
+                    <p class="text-gray-600">Khoảng cách giữa các bàn cực kỳ rộng rãi. Bạn có thể thoải mái buôn chuyện, họp nhóm hay tìm một góc riêng tư để cắm mặt vào laptop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Seller Section -->
+    <section id="best-seller" class="py-24 bg-wood-900 text-white relative overflow-hidden rounded-[3rem] mx-4 lg:mx-8 mb-20 shadow-2xl">
+        <!-- Đồ họa trang trí -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-500 rounded-full mix-blend-screen filter blur-[100px] opacity-40"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-wood-500 rounded-full mix-blend-screen filter blur-[100px] opacity-30"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-wood-700/50 pb-6">
+                <div>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-wood-800 text-wood-300 font-display font-bold text-sm mb-4 border border-wood-700">🔥 Đang gây bão</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white">Signature Thần Thánh</h2>
+                </div>
+                <a href="#menu" class="hidden md:flex items-center gap-2 text-wood-300 hover:text-white font-medium transition-colors group">
+                    Xem toàn bộ menu <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group">
+                    <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1589396575653-c09c794ff6a6?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-white text-wood-700 px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">45k</div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-lg">🌸</span>
+                            <h4 class="text-xl font-display font-bold text-white">Trà Vải Hoa Hồng</h4>
+                        </div>
+                        <p class="text-wood-200 text-sm mb-4">Thanh mát, đậm vị vải, thơm nức mũi mùi hoa hồng.</p>
+                        <button class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all">Thử ngay</button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group transform lg:-translate-y-4">
+                    <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-brand-500 text-white px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">55k</div>
+                        <div class="absolute top-3 left-3 bg-wood-500 text-white p-1.5 rounded-full shadow-lg"><i class="ph-fill ph-star"></i></div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-lg">🍵</span>
+                            <h4 class="text-xl font-display font-bold text-white">Matcha Kem Phô Mai</h4>
+                        </div>
+                        <p class="text-wood-200 text-sm mb-4">Matcha xịn Nhật Bản hòa quyện cùng lớp kem phô mai béo ngậy.</p>
+                        <button class="w-full py-3 bg-wood-600 hover:bg-wood-500 text-white rounded-xl font-display font-bold transition-all shadow-lg">Món Đỉnh Đáy</button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group">
+                    <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-white text-wood-700 px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">49k</div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-lg">🫐</span>
+                            <h4 class="text-xl font-display font-bold text-white">Kombucha Dâu Tằm</h4>
+                        </div>
+                        <p class="text-wood-200 text-sm mb-4">Trà lên men chua ngọt sảng khoái, tốt cho hệ tiêu hóa mỏng manh.</p>
+                        <button class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all">Thử ngay</button>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group transform lg:translate-y-4">
+                    <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1517701550927-30cf0b08d0b3?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-white text-wood-700 px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">50k</div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-lg">🍊</span>
+                            <h4 class="text-xl font-display font-bold text-white">Cold Brew Cam Sả</h4>
+                        </div>
+                        <p class="text-wood-200 text-sm mb-4">Cà phê ủ lạnh nhẹ nhàng, thêm vị cam sả refresh cực mạnh.</p>
+                        <button class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all">Thử ngay</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#menu" class="inline-flex items-center gap-2 text-white bg-wood-700 px-6 py-3 rounded-full font-bold transition-colors">
+                    Xem menu đê <i class="ph-bold ph-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Khổng Lồ Section -->
+    <section id="menu" class="py-20 bg-[#faf8f5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 relative">
+                <h2 class="text-5xl font-display font-bold text-gray-900 mb-4 inline-block relative">
+                    Menu Giải Khát 📜
+                    <svg class="absolute -bottom-4 -right-8 w-16 text-wood-300" viewBox="0 0 100 100" fill="currentColor">
+                        <path d="M49.2,2.3c27.6,0,50,22.4,50,50s-22.4,50-50,50s-50-22.4-50-50S21.6,2.3,49.2,2.3z M49.2,14c-19.9,0-36,16.1-36,36s16.1,36,36,36s36-16.1,36-36S69.1,14,49.2,14z M52.1,35.8l14.3,14.3H26.3v10.5h40.1L52.1,74.9l8.4,8.4L90.8,53.9L60.5,27.4L52.1,35.8z"/>
+                    </svg>
+                </h2>
+            </div>
+
+            <!-- Bento Box Menu Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Cột 1 -->
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-wood-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-3 mb-6 bg-brand-50 w-fit px-4 py-2 rounded-2xl text-brand-600">
+                            <span class="text-2xl">🍃</span>
+                            <h3 class="text-2xl font-display font-bold">Trà Trái Cây</h3>
+                        </div>
+                        <ul class="space-y-5">
+                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
+                                <div>
+                                    <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg">Trà Đào Cam Sả</h4>
+                                    <p class="text-sm text-gray-500">Must-try giải nhiệt</p>
+                                </div>
+                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">45k</span>
+                            </li>
+                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
+                                <div>
+                                    <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg">Trà Lài Đác Thơm</h4>
+                                    <p class="text-sm text-gray-500">Hạt đác giòn sần sật</p>
+                                </div>
+                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">49k</span>
+                            </li>
+                            <li class="flex justify-between items-center group cursor-pointer">
+                                <div>
+                                    <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg">Trà Oolong Mâm Xôi</h4>
+                                </div>
+                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">55k</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-wood-100/50 p-8 rounded-[2rem] border border-wood-200">
+                        <div class="flex items-center gap-3 mb-6 bg-white w-fit px-4 py-2 rounded-2xl text-wood-700 shadow-sm">
+                            <span class="text-2xl">🧀</span>
+                            <h3 class="text-2xl font-display font-bold">Trà Có Macchiato</h3>
+                        </div>
+                        <ul class="space-y-5">
+                            <li class="flex justify-between items-center border-b border-wood-200 pb-3">
+                                <h4 class="font-bold text-gray-800 text-lg">Hồng Trà Macchiato</h4>
+                                <span class="font-display font-bold text-wood-800">45k</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <h4 class="font-bold text-gray-800 text-lg">Trà Lài Macchiato</h4>
+                                <span class="font-display font-bold text-wood-800">45k</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cột 2 (Giữa) -->
+                <div class="space-y-6">
+                    <!-- Image Banner -->
+                    <div class="relative h-48 rounded-[2rem] overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <span class="text-white font-display font-bold text-2xl tracking-widest uppercase border-4 border-white px-6 py-2">Thực Đơn Đa Dạng</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-wood-600 text-white p-8 rounded-[2rem] shadow-xl transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="flex items-center gap-3 mb-6 bg-white/20 w-fit px-4 py-2 rounded-2xl">
+                            <span class="text-2xl">☕</span>
+                            <h3 class="text-2xl font-display font-bold">Cà Phê Chill</h3>
+                        </div>
+                        <ul class="space-y-5">
+                            <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                                <div>
+                                    <h4 class="font-bold text-lg">Cà Phê Muối</h4>
+                                    <p class="text-sm text-wood-200">Béo mặn cuốn lưỡi</p>
+                                </div>
+                                <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full">39k</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                                <div>
+                                    <h4 class="font-bold text-lg">Bạc Xỉu Sữa Mềm</h4>
+                                    <p class="text-sm text-wood-200">Cho team hảo ngọt</p>
+                                </div>
+                                <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full">35k</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                                <h4 class="font-bold text-lg">Cold Brew Classic</h4>
+                                <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full">45k</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <h4 class="font-bold text-lg">Đen / Sữa Truyền Thống</h4>
+                                <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full">29k</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cột 3 -->
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-wood-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-3 mb-6 bg-orange-50 w-fit px-4 py-2 rounded-2xl text-orange-600">
+                            <span class="text-2xl">🧋</span>
+                            <h3 class="text-2xl font-display font-bold">Trà Sữa Thơm Béo</h3>
+                        </div>
+                        <ul class="space-y-5">
+                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
+                                <h4 class="font-bold text-gray-800 group-hover:text-orange-500 transition-colors text-lg">Trà Sữa Oolong Nướng</h4>
+                                <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">45k</span>
+                            </li>
+                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
+                                <h4 class="font-bold text-gray-800 group-hover:text-orange-500 transition-colors text-lg">Trà Sữa Truyền Thống</h4>
+                                <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">35k</span>
+                            </li>
+                            <li class="flex justify-between items-center group cursor-pointer">
+                                <div>
+                                    <h4 class="font-bold text-gray-800 group-hover:text-orange-500 transition-colors text-lg">Topping Bất Bại</h4>
+                                    <p class="text-sm text-gray-500">Trân châu đen / Trắng / Đác</p>
+                                </div>
+                                <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">+10k</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-wood-800 p-8 rounded-[2rem] text-center flex flex-col justify-center items-center h-48 pattern-boxes">
+                        <h3 class="text-2xl font-display font-bold text-white mb-4">Bạn bối rối vì quá nhiều món ngon?</h3>
+                        <button class="bg-brand-500 hover:bg-brand-400 text-white px-6 py-2.5 rounded-full font-display font-bold transition-transform hover:scale-105 shadow-lg shadow-brand-500/50">
+                            Để Quán Gợi Ý Nhé 🎲
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social / Gallery Section -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-wood-500 font-bold uppercase tracking-wider text-sm mb-2 block">Instagram @chillcoffee.hcm</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900">Góc Sống Ảo Cực Chill 📸</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:translate-y-8 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:-translate-y-4 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:translate-y-6 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="location" class="py-20 bg-brand-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[3rem] p-6 md:p-10 shadow-xl border border-brand-100 flex flex-col lg:flex-row gap-10">
+                
+                <!-- Info -->
+                <div class="lg:w-1/2 flex flex-col justify-center">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-8">Nổ máy xe và qua <span class="text-wood-600">Chill</span> ngay! 🛵</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-[#faf8f5] transition-colors">
+                            <div class="w-14 h-14 rounded-full bg-wood-100 flex items-center justify-center flex-shrink-0 text-wood-600 text-2xl">
+                                📍
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-display font-bold text-gray-800 mb-1">Toạ độ bắt sóng</h4>
+                                <p class="text-gray-600">123 Đường Cây Xanh, Phường Thư Giãn, Quận 1, TP. HCM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-[#faf8f5] transition-colors">
+                            <div class="w-14 h-14 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0 text-brand-600 text-2xl">
+                                ⏰
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-display font-bold text-gray-800 mb-1">Giờ mở cửa</h4>
+                                <p class="text-gray-600">07:00 Sáng - 23:00 Đêm (Thứ 2 - Chủ Nhật)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-[#faf8f5] transition-colors">
+                            <div class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 text-orange-600 text-2xl">
+                                📞
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-display font-bold text-gray-800 mb-1">Hotline xỏ giày</h4>
+                                <p class="text-gray-600">099 999 9999 (Gọi đặt chỗ kẻo hết bàn đẹp nha)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connect -->
+                    <div class="mt-10">
+                        <p class="font-display font-bold text-gray-800 mb-4">Theo dõi Chill Coffee:</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-blue-500 hover:text-white hover:-translate-y-1 transition-all shadow-sm">
+                                <i class="ph-fill ph-facebook-logo text-2xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-pink-500 hover:text-white hover:-translate-y-1 transition-all shadow-sm">
+                                <i class="ph-fill ph-instagram-logo text-2xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:bg-black hover:text-white hover:-translate-y-1 transition-all shadow-sm">
+                                <i class="ph-fill ph-tiktok-logo text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="lg:w-1/2 relative h-[400px] lg:h-auto min-h-[400px] rounded-[2rem] overflow-hidden bg-gray-200 shadow-inner border-4 border-white">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197216!2d106.69837967460337!3d10.778789359218413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f489f076127%3A0xa1936e7898583483!2sNh%C3%A0%20Th%E1%BB%9D%20%C4%90%E1%BB%A9c%20B%C3%A0%20S%C3%A0i%20G%C3%B2n!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute inset-0">
+                    </iframe>
+                    <!-- Cute map pin overlay -->
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full font-display font-bold text-wood-600 shadow-lg animate-bounce">
+                        Góc Chill ở đây nè 👇
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-wood-900 text-wood-100 pt-16 pb-8 border-t-8 border-brand-500 rounded-t-[3rem] mt-[-2rem] relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-10 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
+                        <i class="ph-fill ph-tree-evergreen text-3xl text-brand-400"></i>
+                        <span class="font-display font-bold text-3xl tracking-tight text-white">Chill Coffee</span>
+                    </div>
+                    <p class="text-wood-300 font-medium">Bỏ hết âu lo, làm một ly to.</p>
+                </div>
+                
+                <div class="flex gap-6 font-display font-medium text-lg">
+                    <a href="#vibe" class="hover:text-white transition-colors">Không Gian</a>
+                    <a href="#menu" class="hover:text-white transition-colors">Menu</a>
+                    <a href="#location" class="hover:text-white transition-colors">Địa Chỉ</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-wood-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-wood-400">
+                <p>&copy; 2026 Chill Coffee. Mời bạn ghé chơi!</p>
+                <p class="mt-2 md:mt-0">Code bằng cả trái tim 💚 và gỗ 🪵</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            } else {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            }
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md', 'py-1');
+            } else {
+                navbar.classList.remove('shadow-md', 'py-1');
+            }
+        });
+    </script>
+</body>
+</html>

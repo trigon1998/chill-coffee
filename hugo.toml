@@ -1,0 +1,4 @@
+baseURL = 'https://trigon1998.github.io/chill-coffee/'
+languageCode = 'vi-vn'
+title = 'Chill Coffee'
+theme = 'chill-theme'
