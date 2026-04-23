@@ -56,11 +56,11 @@
         }
     </script>
     <style>
-        /* Import font Fredoka & Nunito */
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        /* Import font Quicksand & Nunito (Hỗ trợ 100% Tiếng Việt) */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@500;600;700&display=swap');
         
         body { font-family: 'Nunito', sans-serif; background-color: #faf8f5; }
-        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Fredoka', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Quicksand', sans-serif; font-weight: 700; }
         html { scroll-behavior: smooth; }
         
         /* Custom vui nhộn cho scrollbar - Tone Gỗ & Xanh */
@@ -68,6 +68,10 @@
         ::-webkit-scrollbar-track { background: #fdf8f5; }
         ::-webkit-scrollbar-thumb { background: #c2714c; border-radius: 10px; border: 2px solid #fdf8f5; }
         ::-webkit-scrollbar-thumb:hover { background: #96462d; }
+
+        /* Ẩn scrollbar cho hiệu ứng trượt ngang trên Mobile */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         /* Card hover effect nảy nhẹ */
         .hover-bounce:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(194, 113, 76, 0.15); }
@@ -158,7 +162,7 @@
                         <a href="#best-seller" class="bg-wood-600 hover:bg-wood-700 text-white px-8 py-4 rounded-full font-display font-semibold text-lg transition-all shadow-xl shadow-wood-600/30 flex items-center justify-center gap-2 hover:-translate-y-1">
                             <i class="ph-bold ph-coffee"></i> Order Nước Thôi
                         </a>
-                        <a href="#location" class="bg-white border-2 border-wood-200 hover:border-wood-500 text-wood-700 px-8 py-4 rounded-full font-display font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-lg">
+                        <a href="https://maps.app.goo.gl/eJy5SPL2DRrspBbi8" target="_blank" class="bg-white border-2 border-wood-200 hover:border-wood-500 text-wood-700 px-8 py-4 rounded-full font-display font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-lg">
                             📍 Xem Bản Đồ
                         </a>
                     </div>
@@ -232,9 +236,10 @@
                 <p class="text-gray-600 text-lg">Không chen chúc, không ồn ào. Nơi đây là sự kết hợp hoàn hảo giữa thiên nhiên và sự tiện nghi.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Mobile Horizontal Scroll / Desktop Grid -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar -mx-4 px-4 pb-8 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-3 gap-6">
                 <!-- Card 1 -->
-                <div class="bg-brand-50 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-brand-200 hover-bounce transition-all duration-300">
+                <div class="min-w-[85%] snap-center md:min-w-0 bg-brand-50 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-brand-200 hover-bounce transition-all duration-300">
                     <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm transform -rotate-6 text-brand-500">
                         <i class="ph-fill ph-plant"></i>
                     </div>
@@ -243,7 +248,7 @@
                 </div>
                 
                 <!-- Card 2 -->
-                <div class="bg-wood-50 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-wood-200 hover-bounce transition-all duration-300 transform md:-translate-y-4">
+                <div class="min-w-[85%] snap-center md:min-w-0 bg-wood-50 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-wood-200 hover-bounce transition-all duration-300 transform md:-translate-y-4">
                     <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm transform rotate-3 text-wood-600">
                         <i class="ph-fill ph-house-line"></i>
                     </div>
@@ -252,7 +257,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-orange-50/70 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-orange-200 hover-bounce transition-all duration-300">
+                <div class="min-w-[85%] snap-center md:min-w-0 bg-orange-50/70 rounded-[2.5rem] p-8 border-2 border-transparent hover:border-orange-200 hover-bounce transition-all duration-300">
                     <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm transform rotate-6 text-orange-600">
                         <i class="ph-fill ph-armchair"></i>
                     </div>
@@ -281,9 +286,10 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Mobile Horizontal Scroll / Desktop Grid -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar -mx-4 px-4 pb-8 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Item 1: Trà Vải Lài Hibiscus -->
-                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group">
+                <div class="min-w-[85%] snap-center sm:min-w-0 bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group">
                     <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute top-3 right-3 bg-white text-wood-700 px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">30k</div>
@@ -299,7 +305,7 @@
                 </div>
 
                 <!-- Item 2: Cà Phê Cốt Dừa -->
-                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group transform lg:-translate-y-4">
+                <div class="min-w-[85%] snap-center sm:min-w-0 bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group transform lg:-translate-y-4">
                     <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute top-3 right-3 bg-brand-500 text-white px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">30k</div>
@@ -316,7 +322,7 @@
                 </div>
 
                 <!-- Item 3: Cà phê kem muối -->
-                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group">
+                <div class="min-w-[85%] snap-center sm:min-w-0 bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group">
                     <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute top-3 right-3 bg-white text-wood-700 px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">25k</div>
@@ -332,7 +338,7 @@
                 </div>
 
                 <!-- Item 4: Sữa Chua Trái Cây -->
-                <div class="bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group transform lg:translate-y-4">
+                <div class="min-w-[85%] snap-center sm:min-w-0 bg-wood-800/50 backdrop-blur-sm border border-wood-700 rounded-3xl p-4 hover:bg-wood-800 transition-colors group transform lg:translate-y-4">
                     <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=800&auto=format&fit=crop" alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute top-3 right-3 bg-white text-wood-700 px-3 py-1 rounded-full text-sm font-bold font-display shadow-lg">29k</div>
@@ -346,12 +352,6 @@
                         <button class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all">Thử ngay</button>
                     </div>
                 </div>
-            </div>
-            
-            <div class="mt-8 text-center md:hidden">
-                <a href="#menu" class="inline-flex items-center gap-2 text-white bg-wood-700 px-6 py-3 rounded-full font-bold transition-colors">
-                    Xem menu đê <i class="ph-bold ph-arrow-down"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -368,12 +368,12 @@
                 </h2>
             </div>
 
-            <!-- Bento Box Menu Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Bento Box Menu Layout with Mobile Horizontal Scroll -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar -mx-4 px-4 pb-8 lg:mx-0 lg:px-0 lg:pb-0 lg:grid lg:grid-cols-3 gap-6">
                 <!-- CỘT 1 -->
-                <div class="space-y-6">
+                <div class="min-w-[85%] snap-center lg:min-w-0 space-y-6">
                     <!-- Cà phê nguyên chất -->
-                    <div class="bg-wood-600 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="bg-wood-600 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300 h-full lg:h-auto">
                         <div class="flex items-center gap-3 mb-6 bg-white/20 w-fit px-4 py-2 rounded-2xl">
                             <span class="text-2xl">☕</span>
                             <h3 class="text-2xl font-display font-bold text-white">Cà Phê Nguyên Chất</h3>
@@ -444,7 +444,7 @@
                 </div>
 
                 <!-- CỘT 2 (Giữa) -->
-                <div class="space-y-6">
+                <div class="min-w-[85%] snap-center lg:min-w-0 space-y-6">
                     <!-- Image Banner -->
                     <div class="relative h-48 rounded-[2rem] overflow-hidden group">
                         <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="">
@@ -454,7 +454,7 @@
                     </div>
 
                     <!-- Nước ép & Sữa chua -->
-                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow h-full lg:h-auto">
                         <div class="flex items-center gap-3 mb-6 bg-brand-50 w-fit px-4 py-2 rounded-2xl text-brand-600">
                             <span class="text-2xl">🥑</span>
                             <h3 class="text-2xl font-display font-bold">Nước Ép & Sữa Chua</h3>
@@ -500,7 +500,7 @@
                 </div>
 
                 <!-- CỘT 3 -->
-                <div class="space-y-6">
+                <div class="min-w-[85%] snap-center lg:min-w-0 space-y-6">
                     <!-- Trà đậm vị & Matcha -->
                     <div class="bg-wood-100/50 p-6 rounded-[2rem] border border-wood-200 hover:shadow-md transition-shadow">
                         <!-- Trà -->
@@ -594,26 +594,27 @@
                 <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900">Góc Sống Ảo Cực Chill 📸</h2>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:translate-y-8 shadow-sm">
+            <!-- Mobile Horizontal Scroll / Desktop Grid -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar -mx-4 px-4 pb-8 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-4 gap-4 md:gap-6">
+                <div class="min-w-[75%] snap-center md:min-w-0 rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:translate-y-8 shadow-sm">
                     <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
                     </div>
                 </div>
-                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 shadow-sm">
+                <div class="min-w-[75%] snap-center md:min-w-0 rounded-3xl overflow-hidden group relative h-64 md:h-80 shadow-sm">
                     <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
                     </div>
                 </div>
-                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:-translate-y-4 shadow-sm">
+                <div class="min-w-[75%] snap-center md:min-w-0 rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:-translate-y-4 shadow-sm">
                     <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
                     </div>
                 </div>
-                <div class="rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:translate-y-6 shadow-sm">
+                <div class="min-w-[75%] snap-center md:min-w-0 rounded-3xl overflow-hidden group relative h-64 md:h-80 transform md:translate-y-6 shadow-sm">
                     <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <i class="ph-fill ph-instagram-logo text-4xl text-white"></i>
@@ -633,13 +634,16 @@
                     <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-8">Nổ máy xe và qua <span class="text-wood-600">Chill</span> ngay! 🛵</h2>
                     
                     <div class="space-y-6">
-                        <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-[#faf8f5] transition-colors">
-                            <div class="w-14 h-14 rounded-full bg-wood-100 flex items-center justify-center flex-shrink-0 text-wood-600 text-2xl">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-[#faf8f5] transition-colors group">
+                            <div class="w-14 h-14 rounded-full bg-wood-100 flex items-center justify-center flex-shrink-0 text-wood-600 text-2xl group-hover:scale-110 transition-transform">
                                 📍
                             </div>
                             <div>
                                 <h4 class="text-xl font-display font-bold text-gray-800 mb-1">Toạ độ bắt sóng</h4>
-                                <p class="text-gray-600">123 Đường Cây Xanh, Phường Thư Giãn, Quận 1, TP. HCM</p>
+                                <p class="text-gray-600 mb-2">123 Đường Cây Xanh, Phường Thư Giãn, Quận 1, TP. HCM</p>
+                                <a href="https://maps.app.goo.gl/eJy5SPL2DRrspBbi8" target="_blank" class="inline-flex items-center gap-1 text-brand-600 font-bold hover:text-brand-800 transition-colors">
+                                    Mở trong Google Maps <i class="ph-bold ph-arrow-square-out"></i>
+                                </a>
                             </div>
                         </div>
 
@@ -682,7 +686,7 @@
                 </div>
 
                 <!-- Map Placeholder -->
-                <div class="lg:w-1/2 relative h-[400px] lg:h-auto min-h-[400px] rounded-[2rem] overflow-hidden bg-gray-200 shadow-inner border-4 border-white">
+                <div class="lg:w-1/2 relative h-[400px] lg:h-auto min-h-[400px] rounded-[2rem] overflow-hidden bg-gray-200 shadow-inner border-4 border-white group">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197216!2d106.69837967460337!3d10.778789359218413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f489f076127%3A0xa1936e7898583483!2sNh%C3%A0%20Th%E1%BB%9D%20%C4%90%E1%BB%A9c%20B%C3%A0%20S%C3%A0i%20G%C3%B2n!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
                         width="100%" 
@@ -694,9 +698,9 @@
                         class="absolute inset-0">
                     </iframe>
                     <!-- Cute map pin overlay -->
-                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full font-display font-bold text-wood-600 shadow-lg animate-bounce">
+                    <a href="https://maps.app.goo.gl/eJy5SPL2DRrspBbi8" target="_blank" class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full font-display font-bold text-wood-600 shadow-lg hover:scale-105 transition-transform flex items-center gap-2 cursor-pointer">
                         Góc Chill ở đây nè 👇
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
