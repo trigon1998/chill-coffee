@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chill Coffee | Không gian mộc mạc, cực chill 🌿🪵</title>
+    <title>Chill Coffee Phú Yên | Không gian cà phê mộc mạc, xanh mát</title>
+    <meta name="description" content="Chill Coffee Phú Yên - không gian cà phê mộc mạc, nhiều cây xanh, rộng rãi để ngồi chill, học bài, làm việc và gặp bạn bè.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chill Coffee Phú Yên | Không gian cà phê mộc mạc, xanh mát">
+    <meta property="og:description" content="Không gian gỗ ấm, cây xanh mát, menu dễ uống và nhiều góc ngồi thoải mái tại Chill Coffee.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/trigon1998/my-images/refs/heads/main/TRIG0140%20edit%20v1%20Large.jpeg">
+    <meta property="og:locale" content="vi_VN">
+    <meta name="theme-color" content="#623122">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -84,7 +92,73 @@
         .blob-shape:hover {
             border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
         }
+
+        .menu-filter-btn.active {
+            background-color: #b45a38;
+            color: white;
+            border-color: #b45a38;
+            box-shadow: 0 12px 24px rgba(180, 90, 56, 0.22);
+        }
+
+        .menu-category.is-hidden { display: none; }
+
+        .review-card {
+            background: linear-gradient(180deg, #ffffff 0%, #fdf8f5 100%);
+        }
+
+        .mobile-quick-cta {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            body { padding-bottom: 78px; }
+            .mobile-quick-cta {
+                position: fixed;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                z-index: 60;
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+                padding: 8px;
+                border-radius: 22px;
+                background: rgba(250, 248, 245, 0.96);
+                border: 1px solid #eed4c8;
+                box-shadow: 0 18px 44px rgba(98, 49, 34, 0.22);
+                backdrop-filter: blur(16px);
+            }
+            .mobile-quick-cta a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                border-radius: 16px;
+                font-family: 'Quicksand', sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                color: white;
+                background: #b45a38;
+            }
+            .mobile-quick-cta a:first-child { background: #258757; }
+        }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Chill Coffee",
+      "description": "Không gian cà phê mộc mạc, nhiều cây xanh, rộng rãi để ngồi chill, học bài, làm việc và gặp bạn bè.",
+      "address": "Phú Hội, Tuy An Đông, Đắk Lắk (Phú Yên)",
+      "openingHours": "Mo-Su 07:00-23:00",
+      "servesCuisine": "Coffee, Tea, Smoothies",
+      "sameAs": [
+        "https://www.facebook.com/chill.coffee.py",
+        "https://instagram.com/chill.coffee.py"
+      ]
+    }
+    </script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
     <!-- Microsoft Clarity Tracking Code -->
@@ -115,6 +189,7 @@
                         <a href="#vibe" class="font-display text-gray-600 hover:text-wood-600 font-medium transition-colors text-lg" data-en="Vibe">Không Gian</a>
                         <a href="#best-seller" class="font-display text-gray-600 hover:text-wood-600 font-medium transition-colors text-lg" data-en="Best Sellers">Món Đỉnh</a>
                         <a href="#menu" class="font-display text-gray-600 hover:text-wood-600 font-medium transition-colors text-lg" data-en="Menu">Thực Đơn</a>
+                        <a href="#reviews" class="font-display text-gray-600 hover:text-wood-600 font-medium transition-colors text-lg" data-en="Reviews">Review</a>
                         <a href="#location" class="bg-wood-600 hover:bg-wood-700 text-white px-6 py-2.5 rounded-full font-display font-medium transition-all shadow-lg shadow-wood-500/30 hover:-translate-y-1" data-en="👉 Visit Us">
                             👉 Ghé Chill
                         </a>
@@ -142,6 +217,7 @@
                 <a href="#vibe" class="block px-4 py-3 bg-wood-50 text-wood-700 rounded-2xl font-display font-medium w-full text-center" data-en="✨ Vibe">✨ Không Gian</a>
                 <a href="#best-seller" class="block px-4 py-3 bg-brand-50 text-brand-700 rounded-2xl font-display font-medium w-full text-center" data-en="🔥 Best Sellers">🔥 Món Đỉnh</a>
                 <a href="#menu" class="block px-4 py-3 bg-orange-50 text-orange-700 rounded-2xl font-display font-medium w-full text-center" data-en="🍹 Menu">🍹 Thực Đơn</a>
+                <a href="#reviews" class="block px-4 py-3 bg-white text-wood-700 rounded-2xl font-display font-medium w-full text-center" data-en="💬 Reviews">💬 Review</a>
                 <a href="#location" class="block px-4 py-3 bg-wood-600 text-white rounded-2xl font-display font-medium w-full text-center mt-4 shadow-md" data-en="📍 Visit Us Now">📍 Ghé Chill Thôi</a>
             </div>
         </div>
@@ -162,24 +238,27 @@
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-wood-400 opacity-75"></span>
                           <span class="relative inline-flex rounded-full h-3 w-3 bg-wood-500"></span>
                         </span>
-                        <span data-en="Sip it, love it, never want to leave">Uống là mê về không nỡ</span>
+                        <span data-en="Chill Coffee in Phu Yen">Chill Coffee Phú Yên</span>
                     </div>
                     <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-wood-900 mb-6 leading-[1.1]">
-                        <span data-en="Rustic">Góc Nhỏ</span> <br/> 
+                        <span data-en="Rustic Coffee">Cà phê mộc</span> <br/> 
                         <span class="text-brand-500 relative">
-                            <span data-en="Cozy Corner 🌿">Mộc Mạc 🌿</span>
+                            <span data-en="Green & Cozy 🌿">xanh và chill 🌿</span>
                             <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-200" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="transparent"/></svg>
                         </span>
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0" data-en="Immerse yourself in a <b>spacious, airy</b> space, breathe in the warm scent of wood, and recharge under the green canopy. Escaping deadlines has never been this 'chill'! 🪵✨">
-                        Thả mình vào không gian <b>rộng rãi, thoáng đãng</b>, hít hà mùi hương của gỗ ấm áp và nạp năng lượng dưới những tán cây xanh mát. Chạy trốn deadline chưa bao giờ "chill" đến thế! 🪵✨
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0" data-en="A warm wooden cafe with green corners, spacious seating, and easy-to-love drinks for studying, working, meeting friends, or taking a quiet break.">
+                        Không gian gỗ ấm, nhiều góc xanh, bàn ngồi rộng rãi và menu dễ uống. Hợp để học bài, làm việc nhẹ, gặp bạn bè hoặc đơn giản là nghỉ một chút cho đầu óc dễ thở hơn.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="#best-seller" class="bg-wood-600 hover:bg-wood-700 text-white px-8 py-4 rounded-full font-display font-semibold text-lg transition-all shadow-xl shadow-wood-600/30 flex items-center justify-center gap-2 hover:-translate-y-1">
-                            <i class="ph-bold ph-coffee"></i> <span data-en="Order Now">Order Nước Thôi</span>
+                            <i class="ph-bold ph-coffee"></i> <span data-en="See Best Sellers">Xem món nên thử</span>
                         </a>
                         <a href="https://maps.app.goo.gl/eJy5SPL2DRrspBbi8" target="_blank" class="bg-white border-2 border-wood-200 hover:border-wood-500 text-wood-700 px-8 py-4 rounded-full font-display font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-lg">
-                            📍 <span data-en="View Map">Xem Bản Đồ</span>
+                            📍 <span data-en="Get Directions">Chỉ đường đến quán</span>
+                        </a>
+                        <a href="https://www.facebook.com/chill.coffee.py" target="_blank" class="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-display font-semibold text-lg transition-all shadow-xl shadow-brand-500/25 flex items-center justify-center gap-2 hover:-translate-y-1">
+                            <i class="ph-bold ph-chat-circle-text"></i> <span data-en="Message Us">Nhắn quán</span>
                         </a>
                     </div>
                 </div>
@@ -387,8 +466,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-wood-700/50 pb-6">
                 <div>
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-wood-800 text-wood-300 font-display font-bold text-sm mb-4 border border-wood-700" data-en="🔥 Trending now">🔥 Đang gây bão</span>
-                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white" data-en="Divine Signatures">Signature Thần Thánh</h2>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-wood-800 text-wood-300 font-display font-bold text-sm mb-4 border border-wood-700" data-en="🔥 First-visit picks">🔥 Nên thử lần đầu ghé</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white" data-en="Best sellers, easy to love">Best seller dễ uống, dễ mê</h2>
                 </div>
                 <a href="#menu" class="hidden md:flex items-center gap-2 text-wood-300 hover:text-white font-medium transition-colors group">
                     <span data-en="View full menu">Xem toàn bộ menu</span> <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
@@ -409,8 +488,8 @@
                             <span class="text-lg">🍵</span>
                             <h4 class="text-xl font-display font-bold text-white" data-en="Cheese Cream Matcha">Matcha Kem Cheese</h4>
                         </div>
-                        <p class="text-wood-200 text-sm mb-4" data-en="Rich matcha blended perfectly with a creamy cheese layer, top choice for green tea lovers.">Matcha đậm vị hòa quyện lớp kem cheese béo ngậy, món đỉnh cho tín đồ mê trà xanh.</p>
-                        <button class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all" data-en="Try it now">Thử ngay</button>
+                        <p class="text-wood-200 text-sm mb-4" data-en="Rich matcha, creamy cheese, and a smooth green tea finish. Great for matcha lovers.">Matcha thơm, lớp kem cheese béo nhẹ, hợp khách thích trà xanh nhưng vẫn muốn một chút ngọt ngào.</p>
+                        <a href="https://www.facebook.com/chill.coffee.py" target="_blank" class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all flex justify-center" data-en="Message to order">Nhắn đặt món</a>
                     </div>
                 </div>
 
@@ -426,8 +505,8 @@
                             <span class="text-lg">🥥</span>
                             <h4 class="text-xl font-display font-bold text-white" data-en="Coconut Coffee Frappe">Cà Phê Cốt Dừa Đá Xay</h4>
                         </div>
-                        <p class="text-wood-200 text-sm mb-4" data-en="Mildly bitter coffee blended with rich coconut milk, blended ice, and a passionate aroma.">Cà phê đắng nhẹ hòa quyện cốt dừa béo ngậy, xay nhuyễn mát lạnh, thơm nồng nàn.</p>
-                        <button class="w-full py-3 bg-wood-600 hover:bg-wood-500 text-white rounded-xl font-display font-bold transition-all shadow-lg" data-en="Top Choice">Món Đỉnh Đáy</button>
+                        <p class="text-wood-200 text-sm mb-4" data-en="Mildly bitter coffee, rich coconut milk, and crushed ice. A safe first pick at Chill.">Cà phê đắng nhẹ hòa cùng cốt dừa béo mịn, món mát lạnh nên thử nếu lần đầu ghé Chill.</p>
+                        <a href="https://www.facebook.com/chill.coffee.py" target="_blank" class="w-full py-3 bg-wood-600 hover:bg-wood-500 text-white rounded-xl font-display font-bold transition-all shadow-lg flex justify-center" data-en="Message to order">Nhắn đặt món</a>
                     </div>
                 </div>
 
@@ -442,8 +521,8 @@
                             <span class="text-lg">🧂</span>
                             <h4 class="text-xl font-display font-bold text-white" data-en="Salted Cream Coffee">Cà Phê Kem Muối</h4>
                         </div>
-                        <p class="text-wood-200 text-sm mb-4" data-en="Rich salted cream mixed with the mild bitterness of coffee, creating a unique aftertaste.">Lớp kem mặn béo ngậy quyện cùng vị đắng nhẹ của cà phê, tạo nên dư vị độc đáo.</p>
-                        <button class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all" data-en="Try it now">Thử ngay</button>
+                        <p class="text-wood-200 text-sm mb-4" data-en="Salted cream balances the coffee bitterness, creating a richer but still easy-to-drink cup.">Lớp kem mặn béo cân lại vị cà phê, tạo hậu vị đậm hơn nhưng vẫn dễ uống.</p>
+                        <a href="https://www.facebook.com/chill.coffee.py" target="_blank" class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all flex justify-center" data-en="Message to order">Nhắn đặt món</a>
                     </div>
                 </div>
 
@@ -458,8 +537,8 @@
                             <span class="text-lg">🍓</span>
                             <h4 class="text-xl font-display font-bold text-white" data-en="Strawberry Yogurt Frappe">Sữa Chua Đá Xay Dâu</h4>
                         </div>
-                        <p class="text-wood-200 text-sm mb-4" data-en="Smooth blended yogurt with sweet strawberry jam, a refreshing choice for summer days.">Sữa chua xay nhuyễn cùng mứt dâu tây ngọt ngào, mát lạnh sảng khoái ngày hè.</p>
-                        <button class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all" data-en="Try it now">Thử ngay</button>
+                        <p class="text-wood-200 text-sm mb-4" data-en="Cool, fruity, and lightly tangy. A refreshing pick for hot afternoons.">Mát, thơm dâu, vị chua ngọt dễ chịu. Một lựa chọn nhẹ nhàng cho buổi trưa hoặc chiều nóng.</p>
+                        <a href="https://www.facebook.com/chill.coffee.py" target="_blank" class="w-full py-3 bg-white/10 hover:bg-white text-white hover:text-wood-900 rounded-xl font-display font-bold transition-all flex justify-center" data-en="Message to order">Nhắn đặt món</a>
                     </div>
                 </div>
             </div>
@@ -476,13 +555,23 @@
                         <path d="M49.2,2.3c27.6,0,50,22.4,50,50s-22.4,50-50,50s-50-22.4-50-50S21.6,2.3,49.2,2.3z M49.2,14c-19.9,0-36,16.1-36,36s16.1,36,36,36s36-16.1,36-36S69.1,14,49.2,14z M52.1,35.8l14.3,14.3H26.3v10.5h40.1L52.1,74.9l8.4,8.4L90.8,53.9L60.5,27.4L52.1,35.8z"/>
                     </svg>
                 </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto" data-en="Pick by drink group, then message us if you want to order before arriving.">Chọn nhanh theo nhóm món, xem giá rõ ràng rồi nhắn quán nếu muốn đặt trước khi ghé.</p>
+            </div>
+
+            <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-4 mb-6" aria-label="Lọc nhóm menu">
+                <button type="button" class="menu-filter-btn active flex-none px-5 py-2.5 rounded-full border border-wood-200 bg-white text-wood-700 font-display font-bold transition-all" data-menu-filter="all" data-en="All">Tất cả</button>
+                <button type="button" class="menu-filter-btn flex-none px-5 py-2.5 rounded-full border border-wood-200 bg-white text-wood-700 font-display font-bold transition-all" data-menu-filter="coffee" data-en="Coffee">Cà phê</button>
+                <button type="button" class="menu-filter-btn flex-none px-5 py-2.5 rounded-full border border-wood-200 bg-white text-wood-700 font-display font-bold transition-all" data-menu-filter="tea" data-en="Tea & Matcha">Trà & Matcha</button>
+                <button type="button" class="menu-filter-btn flex-none px-5 py-2.5 rounded-full border border-wood-200 bg-white text-wood-700 font-display font-bold transition-all" data-menu-filter="frappe" data-en="Frappe">Đá xay</button>
+                <button type="button" class="menu-filter-btn flex-none px-5 py-2.5 rounded-full border border-wood-200 bg-white text-wood-700 font-display font-bold transition-all" data-menu-filter="juice" data-en="Juice & Yogurt">Sinh tố</button>
+                <button type="button" class="menu-filter-btn flex-none px-5 py-2.5 rounded-full border border-wood-200 bg-white text-wood-700 font-display font-bold transition-all" data-menu-filter="soda" data-en="Soda">Soda</button>
             </div>
 
             <!-- Bento Box Menu Layout - Lưới linh hoạt cho nhiều hạng mục -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- CỘT 1: Cà Phê & Cacao -->
-                <div class="bg-wood-700 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="menu-category bg-wood-700 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300" data-menu-category="coffee">
                     <div class="flex items-center gap-3 mb-6 bg-white/10 w-fit px-4 py-2 rounded-2xl">
                         <span class="text-2xl">☕</span>
                         <h3 class="text-2xl font-display font-bold text-white" data-en="Coffee & Cocoa">Cà Phê & Cacao</h3>
@@ -516,7 +605,7 @@
                 </div>
 
                 <!-- CỘT 2: Trà & Matcha -->
-                <div class="bg-brand-50 p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow">
+                <div class="menu-category bg-brand-50 p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow" data-menu-category="tea">
                     <div class="flex items-center gap-3 mb-6 bg-brand-100 w-fit px-4 py-2 rounded-2xl text-brand-700">
                         <span class="text-2xl">🍵</span>
                         <h3 class="text-2xl font-display font-bold" data-en="Tea & Matcha">Trà & Matcha</h3>
@@ -550,7 +639,7 @@
                 </div>
 
                 <!-- CỘT 3: Đá xay & Thức uống nóng -->
-                <div class="bg-gray-900 p-8 rounded-[2rem] text-white shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                <div class="menu-category bg-gray-900 p-8 rounded-[2rem] text-white shadow-xl hover:-translate-y-1 transition-transform duration-300" data-menu-category="frappe">
                     <div class="flex items-center gap-3 mb-6 bg-gray-800 w-fit px-4 py-2 rounded-2xl text-blue-300">
                         <span class="text-2xl">🧊</span>
                         <h3 class="text-2xl font-display font-bold" data-en="Frappe & Hot">Đá Xay & Món Nóng</h3>
@@ -580,7 +669,7 @@
                 </div>
 
                 <!-- CỘT 4: Sữa chua, Sinh Tố & Nước Ép (Kéo dài 2 cột trên md/lg) -->
-                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-wood-100 lg:col-span-2">
+                <div class="menu-category bg-white p-8 rounded-[2rem] shadow-sm border border-wood-100 lg:col-span-2" data-menu-category="juice">
                     <div class="flex items-center gap-3 mb-6 bg-orange-50 w-fit px-4 py-2 rounded-2xl text-orange-600">
                         <span class="text-2xl">🍊</span>
                         <h3 class="text-2xl font-display font-bold" data-en="Juice, Smoothie & Yogurt">Nước Ép, Sinh Tố & Sữa Chua</h3>
@@ -603,7 +692,7 @@
                             <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">28k</span>
                         </div>
                         <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-3 md:border-0 md:pb-0">
-                            <h4 class="font-bold text-gray-800 text-lg" data-en="Pineapple Seed Yogurt">Sữa Chua Đát Thơm</h4>
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Pineapple Seed Yogurt">Sữa chua đác thơm</h4>
                             <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">30k</span>
                         </div>
                         <div class="flex justify-between items-center">
@@ -614,7 +703,7 @@
                 </div>
 
                 <!-- CỘT 5: Soda & Đóng Chai -->
-                <div class="bg-[#f0f5f9] p-8 rounded-[2rem] shadow-sm border border-blue-100">
+                <div class="menu-category bg-[#f0f5f9] p-8 rounded-[2rem] shadow-sm border border-blue-100" data-menu-category="soda">
                     <div class="flex items-center gap-3 mb-6 bg-white w-fit px-4 py-2 rounded-2xl text-blue-500 shadow-sm">
                         <span class="text-2xl">🫧</span>
                         <h3 class="text-2xl font-display font-bold" data-en="Soda & Bottles">Soda & Đóng Chai</h3>
@@ -639,6 +728,35 @@
                     </ul>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews / Social Proof Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-wood-500 font-bold uppercase tracking-wider text-sm mb-2 block" data-en="Why people come back">Vì sao khách hay ghé?</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4" data-en="Not just for coffee.">Không chỉ để uống cà phê.</h2>
+                <p class="text-gray-600 text-lg" data-en="A few simple reasons that make Chill Coffee easy to choose for studying, working, meeting friends, or taking a short break.">Một vài lý do rất đời thường khiến Chill Coffee dễ được chọn để học bài, làm việc, gặp bạn bè hoặc nghỉ một chút.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="review-card rounded-[2rem] p-7 border border-wood-100 shadow-sm">
+                    <div class="text-wood-500 text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-700 text-lg font-semibold leading-relaxed" data-en="The space feels cool and easy to sit in for a long time. Great for studying or light work.">Không gian mát, dễ ngồi lâu. Hợp để học bài hoặc làm việc nhẹ.</p>
+                    <p class="text-gray-400 mt-5 font-bold">Khách ghé Chill</p>
+                </div>
+                <div class="review-card rounded-[2rem] p-7 border border-wood-100 shadow-sm">
+                    <div class="text-wood-500 text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-700 text-lg font-semibold leading-relaxed" data-en="The coconut coffee frappe is easy to drink and rich enough. A good first order.">Cà phê cốt dừa đá xay dễ uống, béo vừa. Lần đầu ghé nên thử món này.</p>
+                    <p class="text-gray-400 mt-5 font-bold">Khách mê cà phê</p>
+                </div>
+                <div class="review-card rounded-[2rem] p-7 border border-wood-100 shadow-sm">
+                    <div class="text-wood-500 text-2xl mb-4">★★★★★</div>
+                    <p class="text-gray-700 text-lg font-semibold leading-relaxed" data-en="Lots of photo corners. The warm wood tone looks beautiful in pictures.">Nhiều góc chụp ảnh, tông gỗ lên hình ấm và rất dễ thương.</p>
+                    <p class="text-gray-400 mt-5 font-bold">Khách thích check-in</p>
+                </div>
             </div>
         </div>
     </section>
@@ -738,6 +856,13 @@
         </div>
     </footer>
 
+    <!-- Sticky Mobile CTA -->
+    <div class="mobile-quick-cta">
+        <a href="#menu" data-en="Menu">Xem menu</a>
+        <a href="https://maps.app.goo.gl/eJy5SPL2DRrspBbi8" target="_blank" data-en="Map">Chỉ đường</a>
+        <a href="https://www.facebook.com/chill.coffee.py" target="_blank" data-en="Message">Nhắn quán</a>
+    </div>
+
     <!-- Interactive Scripts -->
     <script>
         // Language Toggle Logic
@@ -811,6 +936,24 @@
             } else {
                 navbar.classList.remove('shadow-md', 'py-1');
             }
+        });
+
+        // Menu category filter
+        const filterButtons = document.querySelectorAll('[data-menu-filter]');
+        const menuCategories = document.querySelectorAll('[data-menu-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-menu-filter');
+
+                filterButtons.forEach(item => item.classList.remove('active'));
+                button.classList.add('active');
+
+                menuCategories.forEach(category => {
+                    const shouldShow = filter === 'all' || category.getAttribute('data-menu-category') === filter;
+                    category.classList.toggle('is-hidden', !shouldShow);
+                });
+            });
         });
     </script>
 </body>
