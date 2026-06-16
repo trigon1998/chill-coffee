@@ -478,130 +478,167 @@
                 </h2>
             </div>
 
-            <!-- Bento Box Menu Layout - Hiển thị cuộn dọc (Grid) cho cả Mobile lẫn Desktop -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- CỘT 1: Cà Phê -->
-                <div class="space-y-6">
-                    <!-- Cà phê nguyên chất -->
-                    <div class="bg-wood-600 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300">
-                        <div class="flex items-center gap-3 mb-6 bg-white/20 w-fit px-4 py-2 rounded-2xl">
-                            <span class="text-2xl">☕</span>
-                            <h3 class="text-2xl font-display font-bold text-white" data-en="Coffee">Cà Phê</h3>
+            <!-- Bento Box Menu Layout - Lưới linh hoạt cho nhiều hạng mục -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- CỘT 1: Cà Phê & Cacao -->
+                <div class="bg-wood-700 p-8 rounded-[2rem] shadow-xl text-white transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-6 bg-white/10 w-fit px-4 py-2 rounded-2xl">
+                        <span class="text-2xl">☕</span>
+                        <h3 class="text-2xl font-display font-bold text-white" data-en="Coffee & Cocoa">Cà Phê & Cacao</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                            <h4 class="font-bold text-lg"><span data-en="Black Coffee">Cà Phê Đen</span> <span class="text-xs font-normal opacity-80" data-en="(Filter / Machine)">(Phin / Máy)</span></h4>
+                            <span class="font-display font-bold text-wood-900 bg-white px-2 py-1 rounded-full text-sm">16k / 20k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                            <h4 class="font-bold text-lg"><span data-en="Milk Coffee">Cà Phê Sữa</span> <span class="text-xs font-normal opacity-80" data-en="(Filter / Machine)">(Phin / Máy)</span></h4>
+                            <span class="font-display font-bold text-wood-900 bg-white px-2 py-1 rounded-full text-sm">18k / 22k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                            <h4 class="font-bold text-lg" data-en="White Coffee (Bac Xiu)">Bạc Xỉu</h4>
+                            <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full text-sm">28k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                            <h4 class="font-bold text-lg" data-en="Salted Cream Coffee">Cà Phê Kem Muối</h4>
+                            <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full text-sm">28k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-white/20 pb-3">
+                            <h4 class="font-bold text-lg" data-en="Cheese Cream Coffee">Cà Phê Kem Cheese</h4>
+                            <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full text-sm">28k</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <h4 class="font-bold text-lg" data-en="Iced Cocoa">CaCao Đá</h4>
+                            <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full text-sm">30k</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CỘT 2: Trà & Matcha -->
+                <div class="bg-brand-50 p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-6 bg-brand-100 w-fit px-4 py-2 rounded-2xl text-brand-700">
+                        <span class="text-2xl">🍵</span>
+                        <h3 class="text-2xl font-display font-bold" data-en="Tea & Matcha">Trà & Matcha</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center border-b border-dashed border-brand-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Peach Orange Lemongrass Tea">Trà Đào Cam Sả</h4>
+                            <span class="font-display font-bold text-brand-700 bg-brand-200/50 px-3 py-1 rounded-full text-sm">35k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-dashed border-brand-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Pink Guava Tea">Trà Ổi Hồng</h4>
+                            <span class="font-display font-bold text-brand-700 bg-brand-200/50 px-3 py-1 rounded-full text-sm">30k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-dashed border-brand-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Lychee Jasmine Hibiscus Tea">Trà Vải Lài Hibiscus</h4>
+                            <span class="font-display font-bold text-brand-700 bg-brand-200/50 px-3 py-1 rounded-full text-sm">35k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-dashed border-brand-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Thai Green Lemon Tea">Trà Chanh Thái Xanh</h4>
+                            <span class="font-display font-bold text-brand-700 bg-brand-200/50 px-3 py-1 rounded-full text-sm">30k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-dashed border-brand-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg"><span data-en="Matcha Cream">Matcha Kem</span> <span class="text-xs font-normal opacity-70" data-en="(Cheese/Salt)">(Cheese / Muối)</span></h4>
+                            <span class="font-display font-bold text-brand-700 bg-brand-200/50 px-3 py-1 rounded-full text-sm">35k</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <h4 class="font-bold text-gray-800 text-lg"><span data-en="Matcha Latte">Matcha Latte</span> <span class="text-xs font-normal opacity-70" data-en="(Classic/Strawberry/Blueberry)">(Thường / Dâu / Việt Quất)</span></h4>
+                            <span class="font-display font-bold text-brand-700 bg-brand-200/50 px-3 py-1 rounded-full text-sm">35k</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CỘT 3: Đá xay & Thức uống nóng -->
+                <div class="bg-gray-900 p-8 rounded-[2rem] text-white shadow-xl hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-6 bg-gray-800 w-fit px-4 py-2 rounded-2xl text-blue-300">
+                        <span class="text-2xl">🧊</span>
+                        <h3 class="text-2xl font-display font-bold" data-en="Frappe & Hot">Đá Xay & Món Nóng</h3>
+                    </div>
+                    <ul class="space-y-4 mb-6">
+                        <li class="flex justify-between items-center border-b border-gray-700 pb-3">
+                            <h4 class="font-bold text-gray-100 text-lg" data-en="Coconut Coffee / Cocoa Frappe">Cà Phê / Cacao Cốt Dừa</h4>
+                            <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-700 pb-3">
+                            <h4 class="font-bold text-gray-100 text-lg" data-en="Cheese Cream Matcha Frappe">Matcha Đá Xay Kem Cheese</h4>
+                            <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-700 pb-3">
+                            <h4 class="font-bold text-gray-100 text-lg"><span data-en="Yogurt Frappe">Sữa Chua Đá Xay</span> <span class="text-xs font-normal opacity-70" data-en="(Peach/Strawberry/Blueberry/Mango)">(Đào/Dâu/V.Quất/Xoài)</span></h4>
+                            <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-gray-700 pb-3">
+                            <h4 class="font-bold text-gray-100 text-lg"><span data-en="Hot Drink">Nóng</span> <span class="text-xs font-normal text-red-300" data-en="(Cocoa / Herbal Tea)">(Cacao / Trà thảo mộc)</span></h4>
+                            <span class="font-display font-bold text-red-300 bg-gray-800 px-3 py-1 rounded-full text-sm">30k</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <h4 class="font-bold text-gray-100 text-lg" data-en="Hot Milk">Sữa Nóng</h4>
+                            <span class="font-display font-bold text-red-300 bg-gray-800 px-3 py-1 rounded-full text-sm">28k</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CỘT 4: Sữa chua, Sinh Tố & Nước Ép (Kéo dài 2 cột trên md/lg) -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-wood-100 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6 bg-orange-50 w-fit px-4 py-2 rounded-2xl text-orange-600">
+                        <span class="text-2xl">🍊</span>
+                        <h3 class="text-2xl font-display font-bold" data-en="Juice, Smoothie & Yogurt">Nước Ép, Sinh Tố & Sữa Chua</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                        <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg"><span data-en="Fresh Juice">Nước Ép</span> <span class="text-xs font-normal opacity-70" data-en="(Carrot / Pineapple)">(Cà rốt / Thơm)</span></h4>
+                            <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">35k</span>
                         </div>
-                        <ul class="space-y-4">
-                            <li class="flex justify-between items-center border-b border-white/20 pb-3 group">
-                                <div>
-                                    <h4 class="font-bold text-lg text-white"><span data-en="Black Coffee">Cà Phê Đen</span> <span class="text-xs opacity-80" data-en="(Traditional/Machine)">(Phin / Máy)</span></h4>
-                                </div>
-                                <span class="font-display font-bold text-wood-900 bg-white px-2 py-1 rounded-full text-sm whitespace-nowrap">15k / 18k</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-white/20 pb-3 group">
-                                <div>
-                                    <h4 class="font-bold text-lg text-white"><span data-en="Milk Coffee">Cà Phê Sữa</span> <span class="text-xs opacity-80" data-en="(Traditional/Machine)">(Phin / Máy)</span></h4>
-                                </div>
-                                <span class="font-display font-bold text-wood-900 bg-white px-2 py-1 rounded-full text-sm whitespace-nowrap">16k / 20k</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-white/20 pb-3 group">
-                                <div>
-                                    <h4 class="font-bold text-lg text-white" data-en="White Coffee (Bac Xiu)">Bạc Xỉu</h4>
-                                </div>
-                                <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full text-sm">28k</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-white/20 pb-3 group">
-                                <div>
-                                    <h4 class="font-bold text-lg text-white" data-en="Salted Cream Coffee">Cà Phê Kem Muối</h4>
-                                </div>
-                                <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full text-sm">28k</span>
-                            </li>
-                            <li class="flex justify-between items-center group">
-                                <div>
-                                    <h4 class="font-bold text-lg text-white" data-en="Cheese Cream Coffee">Cà Phê Kem Cheese</h4>
-                                </div>
-                                <span class="font-display font-bold text-wood-900 bg-white px-3 py-1 rounded-full text-sm">28k</span>
-                            </li>
-                        </ul>
+                        <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Orange Honey Juice">Ép Cam Mật Ong</h4>
+                            <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">30k</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg"><span data-en="Smoothie">Sinh Tố</span> <span class="text-xs font-normal opacity-70" data-en="(Soursop/Avocado/Strawberry/Mango/Sapodilla)">(M.Cầu/Bơ/Dâu/Xoài/Sapoche)</span></h4>
+                            <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">35k</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg"><span data-en="Yogurt">Sữa Chua</span> <span class="text-xs font-normal opacity-70" data-en="(Ice/Peach/Strawberry/Blueberry/Mango)">(Đá/Đào/Dâu/V.Quất/Xoài)</span></h4>
+                            <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">28k</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-dashed border-gray-200 pb-3 md:border-0 md:pb-0">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Pineapple Seed Yogurt">Sữa Chua Đát Thơm</h4>
+                            <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">30k</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Fruit Yogurt">Sữa Chua Trái Cây</h4>
+                            <span class="font-display font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-full text-sm">35k</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- CỘT 2: Matcha & Giải khát -->
-                <div class="space-y-6">
-                    <!-- Image Banner -->
-                    <div class="relative h-48 rounded-[2rem] overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800&auto=format&fit=crop" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                            <span class="text-white font-display font-bold text-2xl tracking-widest uppercase border-4 border-white px-6 py-2" data-en="Refreshing">Tươi Mát</span>
-                        </div>
+                <!-- CỘT 5: Soda & Đóng Chai -->
+                <div class="bg-[#f0f5f9] p-8 rounded-[2rem] shadow-sm border border-blue-100">
+                    <div class="flex items-center gap-3 mb-6 bg-white w-fit px-4 py-2 rounded-2xl text-blue-500 shadow-sm">
+                        <span class="text-2xl">🫧</span>
+                        <h3 class="text-2xl font-display font-bold" data-en="Soda & Bottles">Soda & Đóng Chai</h3>
                     </div>
-
-                    <!-- Matcha & Giải Khát -->
-                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-brand-100 hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-3 mb-6 bg-brand-50 w-fit px-4 py-2 rounded-2xl text-brand-600">
-                            <span class="text-2xl">🍵</span>
-                            <h3 class="text-2xl font-display font-bold" data-en="Matcha & Refreshments">Matcha & Giải Khát</h3>
-                        </div>
-                        <ul class="space-y-4">
-                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
-                                <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg" data-en="Cheese Cream Matcha">Matcha Kem Cheese</h4>
-                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
-                                <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg" data-en="Salted Cream Matcha">Matcha Kem Muối</h4>
-                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
-                                <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg" data-en="Strawberry Matcha Latte">Matcha Latte Dâu</h4>
-                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center group cursor-pointer border-b border-dashed border-gray-200 pb-3">
-                                <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg" data-en="Blueberry Matcha Latte">Matcha Latte Việt Quất</h4>
-                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center group cursor-pointer">
-                                <h4 class="font-bold text-gray-800 group-hover:text-brand-500 transition-colors text-lg" data-en="Iced Cocoa">CaCao Đá</h4>
-                                <span class="font-display font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">28k</span>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center border-b border-dashed border-blue-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg" data-en="Fresh Lemonade">Đá Chanh</h4>
+                            <span class="font-display font-bold text-blue-600 bg-white px-3 py-1 rounded-full text-sm shadow-sm">20k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-dashed border-blue-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg"><span data-en="Soda">Soda</span> <span class="text-xs font-normal opacity-70" data-en="(Peach/Strawberry/Blueberry)">(Đào / Dâu / Việt Quất)</span></h4>
+                            <span class="font-display font-bold text-blue-600 bg-white px-3 py-1 rounded-full text-sm shadow-sm">28k</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-dashed border-blue-200 pb-3">
+                            <h4 class="font-bold text-gray-800 text-lg"><span data-en="Redbull">Bò Húc</span></h4>
+                            <span class="font-display font-bold text-blue-600 bg-white px-3 py-1 rounded-full text-sm shadow-sm">22k</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <h4 class="font-bold text-gray-800 text-lg leading-tight"><span data-en="Soft Drinks">Nước Ngọt</span> <br><span class="text-xs font-normal opacity-70" data-en="(7Up, Pepsi, Sting, O Độ...)">(7up, Pepsi, Sting, 0 độ, Dr.Thanh...)</span></h4>
+                            <span class="font-display font-bold text-blue-600 bg-white px-3 py-1 rounded-full text-sm shadow-sm">17k</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- CỘT 3: Đá xay -->
-                <div class="space-y-6">
-                    <!-- Đá xay -->
-                    <div class="bg-gray-900 p-8 rounded-[2rem] text-white hover:shadow-xl transition-shadow h-full">
-                        <div class="flex items-center gap-3 mb-6 bg-gray-800 w-fit px-4 py-2 rounded-2xl text-blue-300">
-                            <span class="text-2xl">🧊</span>
-                            <h3 class="text-2xl font-display font-bold" data-en="Frappe">Đá Xay</h3>
-                        </div>
-                        <ul class="space-y-4 mb-4">
-                            <li class="flex justify-between items-center border-b border-gray-700 pb-3">
-                                <h4 class="font-bold text-gray-100" data-en="Coconut Coffee Frappe">Cà Phê Cốt Dừa Đá Xay</h4>
-                                <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-gray-700 pb-3">
-                                <h4 class="font-bold text-gray-100" data-en="Coconut Cocoa Frappe">Cacao Cốt Dừa Đá Xay</h4>
-                                <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-gray-700 pb-3">
-                                <h4 class="font-bold text-gray-100" data-en="Cheese Cream Matcha Frappe">Matcha Đá Xay Kem Cheese</h4>
-                                <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-gray-700 pb-3">
-                                <h4 class="font-bold text-gray-100"><span data-en="Yogurt Frappe">Sữa Chua Đá Xay</span> <span class="text-xs font-normal opacity-70" data-en="(Strawberry/Blueberry)">(Dâu / Việt Quất)</span></h4>
-                                <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <h4 class="font-bold text-gray-100"><span data-en="Yogurt Frappe">Sữa Chua Đá Xay</span> <span class="text-xs font-normal opacity-70" data-en="(Peach/Mango)">(Đào / Xoài)</span></h4>
-                                <span class="font-display font-bold text-blue-300 bg-gray-800 px-3 py-1 rounded-full text-sm">35k</span>
-                            </li>
-                        </ul>
-                        <!-- Nước đóng chai -->
-                        <div class="mt-6 pt-4 border-t border-gray-700 text-sm text-gray-400 flex flex-wrap gap-2 justify-between">
-                            <span data-en="Soft drinks: 17k">Nước ngọt: 17k</span>
-                            <span data-en="Redbull: 22k">Redbull: 22k</span>
-                            <span data-en="Mineral water: 8k">Nước suối: 8k</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
